@@ -1,0 +1,6 @@
+.ai/
+.DS_Store
+*.app/
+__pycache__/
+paper.png
+textured_paper.png
