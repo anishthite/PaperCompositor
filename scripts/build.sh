@@ -11,7 +11,7 @@ for option in "$@"; do
     case "$option" in
         --build-only|--self-check)
             if [[ $# -ne 1 ]]; then printf '%s must be used alone.\n' "$option" >&2; exit 2; fi ;;
-        --controls|--enable|--chart|--color-only|--paper-only|--advanced) ;;
+        --controls|--enable|--chart|--color-only|--paper-only|--advanced|--reading) ;;
         *) printf 'Unknown option: %s\n' "$option" >&2; exit 2 ;;
     esac
 done
@@ -40,7 +40,7 @@ cp "$root"/LICENSES/*.txt "$app/Contents/Resources/LICENSES/"
     -c 'Add :LSMinimumSystemVersion string 15.0' \
     -c 'Add :LSUIElement bool true' \
     -c 'Add :NSHighResolutionCapable bool true' \
-    -c 'Add :CFBundleShortVersionString string 0.3.0' \
+    -c 'Add :CFBundleShortVersionString string 0.5.0' \
     "$app/Contents/Info.plist"
 codesign --force --sign - --timestamp=none "$app"
 printf 'Built %s\n' "$app"

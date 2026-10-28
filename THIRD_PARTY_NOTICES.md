@@ -20,6 +20,12 @@ The source header states:
 
 The shader repository has no top-level license file at the reviewed revision; its file-level GPL-2.0-or-later declaration is the basis for this project's conservative code-license choice. The original GLSL file is not bundled; the compositor reconstructs its color/blend operations in native layers. This license choice does not establish licensing for the texture.
 
+## Surface Dots reading-mode reference
+
+[snes19xx/surface-dots reading_mode.glsl](https://github.com/snes19xx/surface-dots/blob/main/.config/hypr/shaders/reading_mode.glsl) is the reference for the Reading looks' BT.601 grayscale, gamma/S-curve/midtone response, cream/charcoal endpoints and ordered-texture concept. Credit **snes19xx** for that shader and look.
+
+PaperCompositor independently reconstructs those mathematical color operations with native filters and a sampled lookup. Its static integer-hash grain/fibers and native blend/mask/vignette implementation differ from the original procedural GLSL; these are not a shader-exact port. No original GLSL source file or Surface Dots artwork is bundled. This repository's license does not assert a license grant for the upstream repository.
+
 ## MIT-licensed context and references
 
 Full notices are preserved verbatim:
